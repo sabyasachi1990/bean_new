@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AppsWorld.JournalVoucherModule.Entities.Models.Mapping
+{
+    public class CategoryMap : EntityTypeConfiguration<Category>
+    {
+        public CategoryMap()
+        {
+            // Primary Key
+            this.HasKey(t => t.Id);
+
+            // Properties
+            this.Property(t => t.Id)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+
+            this.Property(t => t.Name)
+                .HasMaxLength(100);
+
+            this.Property(t => t.Type)
+                .HasMaxLength(50);
+
+            this.Property(t => t.ColorCode)
+                .HasMaxLength(100);
+
+            this.Property(t => t.AccountClass)
+                .HasMaxLength(20);
+
+            // Table & Column Mappings
+            this.ToTable("Category", "Bean");
+            this.Property(t => t.Id).HasColumnName("Id");
+            this.Property(t => t.CompanyId).HasColumnName("CompanyId");
+            this.Property(t => t.Name).HasColumnName("Name");
+            this.Property(t => t.Type).HasColumnName("Type");
+            this.Property(t => t.Recorder).HasColumnName("Recorder");
+            this.Property(t => t.LeadsheetId).HasColumnName("LeadsheetId");
+            this.Property(t => t.ColorCode).HasColumnName("ColorCode");
+            this.Property(t => t.AccountClass).HasColumnName("AccountClass");
+            this.Property(t => t.IsIncomeStatement).HasColumnName("IsIncomeStatement");
+        }
+
+    }
+}

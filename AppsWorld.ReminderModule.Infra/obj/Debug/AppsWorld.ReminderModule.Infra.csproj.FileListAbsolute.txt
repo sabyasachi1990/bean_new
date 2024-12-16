@@ -1,0 +1,8 @@
+D:\GITHUB_NEW\Bean.API\API\AppsWorld.ReminderModule.Infra\bin\Debug\AppsWorld.ReminderModule.Infra.dll
+D:\GITHUB_NEW\Bean.API\API\AppsWorld.ReminderModule.Infra\bin\Debug\AppsWorld.ReminderModule.Infra.pdb
+D:\GITHUB_NEW\Bean.API\API\AppsWorld.ReminderModule.Infra\bin\Debug\Newtonsoft.Json.dll
+D:\GITHUB_NEW\Bean.API\API\AppsWorld.ReminderModule.Infra\bin\Debug\Newtonsoft.Json.xml
+D:\GITHUB_NEW\Bean.API\API\AppsWorld.ReminderModule.Infra\obj\Debug\AppsWorld.ReminderModule.Infra.csproj.CoreCompileInputs.cache
+D:\GITHUB_NEW\Bean.API\API\AppsWorld.ReminderModule.Infra\obj\Debug\AppsWorld.ReminderModule.Infra.csproj.CopyComplete
+D:\GITHUB_NEW\Bean.API\API\AppsWorld.ReminderModule.Infra\obj\Debug\AppsWorld.ReminderModule.Infra.dll
+D:\GITHUB_NEW\Bean.API\API\AppsWorld.ReminderModule.Infra\obj\Debug\AppsWorld.ReminderModule.Infra.pdb

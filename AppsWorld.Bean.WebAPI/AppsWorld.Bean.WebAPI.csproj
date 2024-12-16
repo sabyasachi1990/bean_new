@@ -1,0 +1,1159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D5A31B6-EA78-4CD6-B097-F688F3B93AE0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppsWorld.Bean.WebAPI</RootNamespace>
+    <AssemblyName>AppsWorld.Bean.WebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
+    <ApplicationInsightsResourceId>/subscriptions/65ee0436-3cb0-4484-9f0c-c139611c2c1d/resourcegroups/INT_Application_Inslight/providers/microsoft.insights/components/INT_Bean_Cursor</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/65ee0436-3cb0-4484-9f0c-c139611c2c1d/resourceGroups/INT_Application_Inslight/providers/microsoft.insights/components/INT_Bean_Cursor</ApplicationInsightsAnnotationResourceId>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppsWorld.ReportsModule.Infra, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AppsWorld.ReportsModule.Application\bin\Debug\AppsWorld.ReportsModule.Infra.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elasticsearch.Net, Version=6.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elasticsearch.Net.6.0.0\lib\net46\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.Core, Version=1.6.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Hangfire.Core.1.6.6\lib\net45\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.6.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Hangfire.SqlServer.1.6.6\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="IdentityModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityModel.1.9.2\lib\net45\IdentityModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IdentityServer3.AccessTokenValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IdentityServer3.AccessTokenValidation.2.14.0\lib\net45\IdentityServer3.AccessTokenValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.3.1, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LinqKit.1.1.3.1\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.9.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.21.0.429, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.21.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.3.0.0\lib\net452\Microsoft.Azure.KeyVault.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.WebKey, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.WebKey.3.0.0\lib\net452\Microsoft.Azure.KeyVault.WebKey.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Services.AppAuthentication.1.3.1\lib\net461\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.4\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.4\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.4.3.0\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocol.Extensions, Version=1.0.2.33, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocol.Extensions.1.0.2.206221351\lib\net45\Microsoft.IdentityModel.Protocol.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Jwt, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Jwt.3.0.1\lib\net45\Microsoft.Owin.Security.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OpenIdConnect">
+      <HintPath>..\packages\Microsoft.Owin.Security.OpenIdConnect.3.0.1\lib\net45\Microsoft.Owin.Security.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.11\lib\net452\Microsoft.Rest.ClientRuntime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.12\lib\net452\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nest, Version=6.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEST.6.0.0\lib\net46\Nest.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.WebApi.DependencyResolver">
+      <HintPath>..\packages\Ninject.WebApi.DependencyResolver.0.1.4758.24814\lib\net45\Ninject.WebApi.DependencyResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.6.0\lib\net46\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Compact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Compact.1.0.0\lib\net45\Serilog.Formatting.Compact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Settings.AppSettings, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Settings.AppSettings.2.0.0\lib\net45\Serilog.Settings.AppSettings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.ApplicationInsights, Version=2.5.2.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.ApplicationInsights.2.5.2\lib\net45\Serilog.Sinks.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Elasticsearch, Version=4.1.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Elasticsearch.4.1.0\lib\net45\Serilog.Sinks.Elasticsearch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.1.1\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.RollingFile.2.0.0\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Seq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Seq.4.0.0\lib\net45\Serilog.Sinks.Seq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceLocation, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceLocation.1.3.1\lib\net45\ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.5.0.2\lib\net45\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.5.0.2\lib\net45\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Redis.5.0.2\lib\net45\ServiceStack.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.5.0.2\lib\net45\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net45\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core">
+      <HintPath>..\packages\Swashbuckle.Core.5.5.3\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Globalization" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Services" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20622.1351, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.206221351\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.5840.25917, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.6\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.4\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Http.OData.5.3.1\lib\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Templates, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Template.1.0.4\lib\net461\Templates.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Ziraff.Domain.Events, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Domain.Events.Autofac.1.1.1\lib\Ziraff.Domain.Events.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Domain.Events.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Domain.Events.Autofac.1.1.1\lib\Ziraff.Domain.Events.Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.ElasticClientWrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Elastic.Client.Wrapper.1.1.1\lib\Ziraff.ElasticClientWrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.FrameWork, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Framework.1.1.2\lib\net461\Ziraff.FrameWork.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Logger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Logger.1.1.5.7\lib\Ziraff.Logger.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Repository.Pattern, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.RepositoryPattern.Ef6.1.1.1.1\lib\Ziraff.Repository.Pattern.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Repository.Pattern.Ef6, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.RepositoryPattern.Ef6.1.1.1.1\lib\Ziraff.Repository.Pattern.Ef6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Sections, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZiraffSection.1.0.0.4\lib\Ziraff.Sections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Service.Pattern, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Service.Pattern.1.1.1\lib\Ziraff.Service.Pattern.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.WebApi.RedisCache.Core, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.WebApi.RedisCache.V2.1.2.3.2\lib\net461\Ziraff.WebApi.RedisCache.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ziraff.WebApi.RedisCache.V2, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.WebApi.RedisCache.V2.1.2.3.2\lib\net461\Ziraff.WebApi.RedisCache.V2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Home\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AiHandleErrorAttribute.cs" />
+    <Compile Include="App_Start\SeriLogConfig.cs" />
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CorsConfig.cs" />
+    <Compile Include="App_Start\DomainEventsConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AuthConstant.cs" />
+    <Compile Include="Controllers\Attributes\LoggingFilterAttribute.cs" />
+    <Compile Include="Controllers\BankReconciliationController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\BankTransferController.cs" />
+    <Compile Include="Controllers\GLAccountController.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BillController.cs" />
+    <Compile Include="Controllers\CashSalesController.cs" />
+    <Compile Include="Controllers\ClearingController.cs" />
+    <Compile Include="Controllers\CreditMemoController.cs" />
+    <Compile Include="Controllers\DebitNoteController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\JournalVoucherController.cs" />
+    <Compile Include="Controllers\BankWithdrawalController.cs" />
+    <Compile Include="Controllers\MasterModuleController.cs" />
+    <Compile Include="Controllers\OpeningBalanceController.cs" />
+    <Compile Include="Controllers\PaymentController .cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\RevaluationController.cs" />
+    <Compile Include="Controllers\ReceiptController.cs" />
+    <Compile Include="Controllers\ElasticSearchController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Controllers\V2\Cash Sale\CashSalesMainController.cs" />
+    <Compile Include="Controllers\V2\Cash Sale\CashSalesKController.cs" />
+    <Compile Include="Controllers\V2\CN Application\CNApplicationController.cs" />
+    <Compile Include="Controllers\V2\Debit Note\DebitNoteKController.cs" />
+    <Compile Include="Controllers\V2\HealthController.cs" />
+    <Compile Include="Controllers\V2\Invoice\InvoiceMainController.cs" />
+    <Compile Include="Controllers\V2\Invoice\InvoiceKController.cs" />
+    <Compile Include="Controllers\V2\Receipt\ReceiptKController.cs" />
+    <Compile Include="Controllers\V2\Reminder\ReminderController.cs" />
+    <Compile Include="Controllers\V2\Revaluation\RevaluationMainController.cs" />
+    <Compile Include="Controllers\V2\Revaluation\RevaluationKController.cs" />
+    <Compile Include="Controllers\V2\TemplateKController.cs" />
+    <Compile Include="Controllers\V2\Transfer\TransferKController.cs" />
+    <Compile Include="Controllers\V3\JournalVoucherNewController.cs" />
+    <Compile Include="FilterConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\NinjectDependencyResolver.cs" />
+    <Compile Include="Helper\NinjectDependencyScope.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Utils\AuthInformation.cs" />
+    <Compile Include="Utils\CommonConnectionNew.cs" />
+    <Compile Include="Utils\CommonHeadersAttribute.cs" />
+    <Compile Include="Utils\Constant.cs" />
+    <Compile Include="Utils\AESEncryptDecrypt.cs" />
+    <Compile Include="Utils\Kendo\Aggregate.cs" />
+    <Compile Include="Utils\Kendo\DataSourceRequest.cs" />
+    <Compile Include="Utils\Kendo\DataSourceResult.cs" />
+    <Compile Include="Utils\Kendo\Filter.cs" />
+    <Compile Include="Utils\Kendo\QueryableExtensions.cs" />
+    <Compile Include="Utils\Kendo\Sort.cs" />
+    <Compile Include="Utils\KeyVaultProperty.cs" />
+    <Compile Include="Utils\RestSharp.cs" />
+    <Compile Include="Utils\RolePermission.cs" />
+    <Compile Include="Utils\ScreenPermissionModel.cs" />
+    <Compile Include="Utils\ValidateSecureKey.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\readme.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppsWold.InvoiceModule.Application\AppsWorld.InvoiceModule.Application.csproj">
+      <Project>{e6151f20-5712-4e94-910d-66cbb84d8851}</Project>
+      <Name>AppsWorld.InvoiceModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWold.InvoiceModule.Entities\AppsWorld.InvoiceModule.Entities.csproj">
+      <Project>{30ddadf7-5b9e-4468-a06b-5e873ac575d0}</Project>
+      <Name>AppsWorld.InvoiceModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWold.InvoiceModule.Infra\AppsWorld.InvoiceModule.Infra.csproj">
+      <Project>{bb03d4dc-3139-4ad7-8d3d-1298796f992d}</Project>
+      <Name>AppsWorld.InvoiceModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWold.InvoiceModule.RepositoryPattern\AppsWorld.InvoiceModule.RepositoryPattern.csproj">
+      <Project>{bd93d34e-cee3-4d4d-a253-6c75b98d5d4f}</Project>
+      <Name>AppsWorld.InvoiceModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWold.InvoiceModule.Repository\AppsWorld.InvoiceModule.Repository.csproj">
+      <Project>{0f6730ca-f0f0-449d-a1c7-dfdab7a5269c}</Project>
+      <Name>AppsWorld.InvoiceModule.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWold.InvoiceModule.Service\AppsWorld.InvoiceModule.Service.csproj">
+      <Project>{09f6241b-7c06-4502-95d9-16f83e353f71}</Project>
+      <Name>AppsWorld.InvoiceModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankReconciliationModule.Application\AppsWorld.BankReconciliationModule.Application.csproj">
+      <Project>{960971fe-90dc-4b3f-8a86-0a2edd1e360d}</Project>
+      <Name>AppsWorld.BankReconciliationModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankReconciliationModule.Entities\AppsWorld.BankReconciliationModule.Entities.csproj">
+      <Project>{b0a81b80-78e8-4679-be85-14310376d33b}</Project>
+      <Name>AppsWorld.BankReconciliationModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankReconciliationModule.Infra\AppsWorld.BankReconciliationModule.Infra.csproj">
+      <Project>{a5095f43-db6a-463a-bc45-96a27a276445}</Project>
+      <Name>AppsWorld.BankReconciliationModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankReconciliationModule.Models\AppsWorld.BankReconciliationModule.Models.csproj">
+      <Project>{f0bee03a-c168-4159-b733-f1c30ca201c4}</Project>
+      <Name>AppsWorld.BankReconciliationModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankReconciliationModule.RepositoryPattern\AppsWorld.BankReconciliationModule.RepositoryPattern.csproj">
+      <Project>{a5b7aa0f-00c7-4cfa-8063-aff5ec7f2ff1}</Project>
+      <Name>AppsWorld.BankReconciliationModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankReconciliationModule.Service\AppsWorld.BankReconciliationModule.Service.csproj">
+      <Project>{e031983d-7fe5-48fe-8dee-6ed9e623905c}</Project>
+      <Name>AppsWorld.BankReconciliationModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankTransfer.Application\AppsWorld.BankTransferModule.Application.csproj">
+      <Project>{2d23b132-505b-460b-9f40-60d343ce941b}</Project>
+      <Name>AppsWorld.BankTransferModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankTransfer.Entities\AppsWorld.BankTransferModule.Entities.csproj">
+      <Project>{b45b0515-7568-48d8-8148-6ad90af8c61f}</Project>
+      <Name>AppsWorld.BankTransferModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankTransfer.Infra\AppsWorld.BankTransferModule.Infra.csproj">
+      <Project>{aaf19d17-7ab0-47e7-81f6-8dce21e21a19}</Project>
+      <Name>AppsWorld.BankTransferModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankTransfer.Models\AppsWorld.BankTransferModule.Models.csproj">
+      <Project>{7692c4c0-34e1-44eb-8108-748406639c20}</Project>
+      <Name>AppsWorld.BankTransferModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankTransfer.RepositoryPattern\AppsWorld.BankTransferModule.RepositoryPattern.csproj">
+      <Project>{514ad2f5-5488-4d89-b584-3301ff11dfd8}</Project>
+      <Name>AppsWorld.BankTransferModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankTransfer.Repository\AppsWorld.BankTransferModule.Repository.csproj">
+      <Project>{4dce980b-1d5c-4a5f-ae3d-d30d6c3ecb5a}</Project>
+      <Name>AppsWorld.BankTransferModule.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankTransfer.Service\AppsWorld.BankTransferModule.Service.csproj">
+      <Project>{a60def90-9d33-4209-ab64-c8f634fdc6bc}</Project>
+      <Name>AppsWorld.BankTransferModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankWithdrawalModule.Application\AppsWorld.BankWithdrawalModule.Application.csproj">
+      <Project>{b5ebf095-73fe-4c6c-8683-443b73022163}</Project>
+      <Name>AppsWorld.BankWithdrawalModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankWithdrawalModule.Entities\AppsWorld.BankWithdrawalModule.Entities.csproj">
+      <Project>{d69e5aa4-f73e-43c0-90cc-5b9f7be59ff3}</Project>
+      <Name>AppsWorld.BankWithdrawalModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankWithdrawalModule.Infra\AppsWorld.BankWithdrawalModule.Infra.csproj">
+      <Project>{b24e3dc9-51a2-45ab-a983-564d5a0697e8}</Project>
+      <Name>AppsWorld.BankWithdrawalModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankWithdrawalModule.Models\AppsWorld.BankWithdrawalModule.Models.csproj">
+      <Project>{28fc2d2e-98b5-4de4-96d1-4d8ec03b59dc}</Project>
+      <Name>AppsWorld.BankWithdrawalModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankWithdrawalModule.RepositoryPattern\AppsWorld.BankWithdrawalModule.RepositoryPattern.csproj">
+      <Project>{d66b2e41-b1c3-4646-aa05-b41e97e0ecbe}</Project>
+      <Name>AppsWorld.BankWithdrawalModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankWithdrawalModule.Repository\AppsWorld.BankWithdrawalModule.Repository.csproj">
+      <Project>{0c9404d6-3f61-406f-b2f2-7a9afb2f8d6a}</Project>
+      <Name>AppsWorld.BankWithdrawalModule.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BankWithdrawalModule.Service\AppsWorld.BankWithdrawalModule.Service.csproj">
+      <Project>{856e649c-c718-47e8-9a3b-f1d4f56790b6}</Project>
+      <Name>AppsWorld.BankWithdrawalModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BillModule.Application\AppsWorld.BillModule.Application.csproj">
+      <Project>{a0ef5769-c8d9-4aa5-b62b-023fd1678f5c}</Project>
+      <Name>AppsWorld.BillModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BillModule.Entities\AppsWorld.BillModule.Entities.csproj">
+      <Project>{4ab944cf-be27-4e64-91c0-d69f1a9931fb}</Project>
+      <Name>AppsWorld.BillModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BillModule.Infra\AppsWorld.BillModule.Infra.csproj">
+      <Project>{a180abe9-75da-4331-87a5-be9cec580f30}</Project>
+      <Name>AppsWorld.BillModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BillModule.Models\AppsWorld.BillModule.Models.csproj">
+      <Project>{1e2c9dbe-639c-4b13-b86b-773d702542a6}</Project>
+      <Name>AppsWorld.BillModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BillModule.RepositoryPattern\AppsWorld.BillModule.RepositoryPattern.csproj">
+      <Project>{bd755330-b154-4556-95d9-b8f3e817d8f6}</Project>
+      <Name>AppsWorld.BillModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BillModule.Service\AppsWorld.BillModule.Service.csproj">
+      <Project>{4046bfc1-e3f9-440c-9688-168cab251af1}</Project>
+      <Name>AppsWorld.BillModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CashSalesModule.Application\AppsWorld.CashSalesModule.Application.csproj">
+      <Project>{b5965e11-ea20-45a6-91f2-1b8a5bb171be}</Project>
+      <Name>AppsWorld.CashSalesModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CashSalesModule.Entities\AppsWorld.CashSalesModule.Entities.csproj">
+      <Project>{af6d5b13-c8bb-4f0d-a7b6-a7a80715e540}</Project>
+      <Name>AppsWorld.CashSalesModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CashSalesModule.Infra\AppsWorld.CashSalesModule.Infra.csproj">
+      <Project>{731e6071-50ad-4784-89d6-5761c5dbd772}</Project>
+      <Name>AppsWorld.CashSalesModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CashSalesModule.Models\AppsWorld.CashSalesModule.Models.csproj">
+      <Project>{2c7c77c8-0898-4061-9092-2bf8509cf5d2}</Project>
+      <Name>AppsWorld.CashSalesModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CashSalesModule.RepositoryPattern\AppsWorld.CashSalesModule.RepositoryPattern.csproj">
+      <Project>{528793c1-47da-4f69-93ee-59b7f56ed698}</Project>
+      <Name>AppsWorld.CashSalesModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CashSalesModule.Repository\AppsWorld.CashSalesModule.Repository.csproj">
+      <Project>{8a8aad62-d513-4627-bce9-070436e0ed74}</Project>
+      <Name>AppsWorld.CashSalesModule.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CashSalesModule.Service\AppsWorld.CashSalesModule.Service.csproj">
+      <Project>{3d2bf6e4-49d8-47ff-b5f4-2c828852b9d7}</Project>
+      <Name>AppsWorld.CashSalesModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Application\AppsWorld.CommonModule.Application.csproj">
+      <Project>{613a6cc2-aaf3-47c4-833c-503284686cc4}</Project>
+      <Name>AppsWorld.CommonModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Entities\AppsWorld.CommonModule.Entities.csproj">
+      <Project>{f387a5ee-2a80-448f-b5a6-81f16b68375a}</Project>
+      <Name>AppsWorld.CommonModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Infra\AppsWorld.CommonModule.Infra.csproj">
+      <Project>{de74fa8d-df9f-4619-b12f-af364e5aae86}</Project>
+      <Name>AppsWorld.CommonModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Models\AppsWorld.CommonModule.Models.csproj">
+      <Project>{1913096a-0cb7-43d6-a1f2-0768693f29a9}</Project>
+      <Name>AppsWorld.CommonModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.RepositoryPattern\AppsWorld.CommonModule.RepositoryPattern.csproj">
+      <Project>{efc36cd9-5709-41f1-b5fd-8794281e4d5b}</Project>
+      <Name>AppsWorld.CommonModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Service\AppsWorld.CommonModule.Service.csproj">
+      <Project>{030714cb-455e-4218-b41e-7e9c838d9520}</Project>
+      <Name>AppsWorld.CommonModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CreditMemoModule.Application\AppsWorld.CreditMemoModule.Application.csproj">
+      <Project>{eb1b10df-b7c4-4714-a993-a3b94bb83bc6}</Project>
+      <Name>AppsWorld.CreditMemoModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CreditMemoModule.Entities\AppsWorld.CreditMemoModule.Entities.csproj">
+      <Project>{ED1360BB-78EC-485F-B868-AC4E694BDB05}</Project>
+      <Name>AppsWorld.CreditMemoModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CreditMemoModule.Infra\AppsWorld.CreditMemoModule.Infra.csproj">
+      <Project>{6987A6C5-1F09-4373-86C5-B67162281063}</Project>
+      <Name>AppsWorld.CreditMemoModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CreditMemoModule.Models\AppsWorld.CreditMemoModule.Models.csproj">
+      <Project>{64AA8848-E775-454F-A932-E112FEEA8985}</Project>
+      <Name>AppsWorld.CreditMemoModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CreditMemoModule.RepositoryPattern\AppsWorld.CreditMemoModule.RepositoryPattern.csproj">
+      <Project>{379BA129-6651-4372-9D26-9CBDDBD9D3E2}</Project>
+      <Name>AppsWorld.CreditMemoModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CreditMemoModule.Service\AppsWorld.CreditMemoModule.Service.csproj">
+      <Project>{0891fe73-a6c5-4aea-9626-947a0ddbbeee}</Project>
+      <Name>AppsWorld.CreditMemoModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.DebitNoteModule.Application\AppsWorld.DebitNoteModule.Application.csproj">
+      <Project>{4cd494e3-92d4-43a4-ab11-901534604140}</Project>
+      <Name>AppsWorld.DebitNoteModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.DebitNoteModule.Entities\AppsWorld.DebitNoteModule.Entities.csproj">
+      <Project>{9ca34f10-c97b-41d8-9b87-8656f2386b78}</Project>
+      <Name>AppsWorld.DebitNoteModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.DebitNoteModule.Infra\AppsWorld.DebitNoteModule.Infra.csproj">
+      <Project>{8ceede5d-e765-4476-8d77-68e8a031417c}</Project>
+      <Name>AppsWorld.DebitNoteModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.DebitNoteModule.Models\AppsWorld.DebitNoteModule.Models.csproj">
+      <Project>{1754dccc-88eb-458e-999e-f459c770ce30}</Project>
+      <Name>AppsWorld.DebitNoteModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.DebitNoteModule.RepositoryPattern\AppsWorld.DebitNoteModule.RepositoryPattern.csproj">
+      <Project>{5293e060-97a2-4561-b212-31a3aa3f3c64}</Project>
+      <Name>AppsWorld.DebitNoteModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.DebitNoteModule.Service\AppsWorld.DebitNoteModule.Service.csproj">
+      <Project>{7a8252d6-de78-4680-8127-a6c02d04a7c7}</Project>
+      <Name>AppsWorld.DebitNoteModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.GLAccountModule.Application\AppsWorld.GLAccountModule.Application.csproj">
+      <Project>{7DA0CA84-FF17-4E9C-943E-518FD08D6AF2}</Project>
+      <Name>AppsWorld.GLAccountModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.GLAccountModule.Models\AppsWorld.GLAccountModule.Models.csproj">
+      <Project>{CF1BABB8-D996-44F7-AF8C-435423D98F37}</Project>
+      <Name>AppsWorld.GLAccountModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.GLClearingModule.Application\AppsWorld.GLClearingModule.Application.csproj">
+      <Project>{74ac1f71-23ca-4b20-a31e-7594ea84e3ca}</Project>
+      <Name>AppsWorld.GLClearingModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.GLClearingModule.Entities\AppsWorld.GLClearingModule.Entities.csproj">
+      <Project>{1f625e4a-dc19-406c-8f67-cf1bb3eabc16}</Project>
+      <Name>AppsWorld.GLClearingModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.GLClearingModule.Infra\AppsWorld.GLClearingModule.Infra.csproj">
+      <Project>{51F48C6B-FE9B-4FDB-B594-7C413A68C274}</Project>
+      <Name>AppsWorld.GLClearingModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.GLClearingModule.Models\AppsWorld.GLClearingModule.Models.csproj">
+      <Project>{fd2b10fc-18d8-4321-b601-b1a65e6236cd}</Project>
+      <Name>AppsWorld.GLClearingModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.GLClearingModule.RepositoryPattern\AppsWorld.GLClearingModule.RepositoryPattern.csproj">
+      <Project>{982A3DFF-51AC-4CF5-8E6F-23F118AC0131}</Project>
+      <Name>AppsWorld.GLClearingModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.GLClearingModule.Services\AppsWorld.GLClearingModule.Service.csproj">
+      <Project>{b3d60cfe-3767-4aff-9e57-ed5dd0f0a22c}</Project>
+      <Name>AppsWorld.GLClearingModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.InvoiceModule.Models\AppsWorld.InvoiceModule.Models.csproj">
+      <Project>{9fb0ae8e-d29e-4d34-bab0-13cd7dc3dad6}</Project>
+      <Name>AppsWorld.InvoiceModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Application\AppsWorld.JournalVoucherModule.Application.csproj">
+      <Project>{ae4d8ef6-b000-45d0-89bd-9bb9ef75f343}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Entities\AppsWorld.JournalVoucherModule.Entities.csproj">
+      <Project>{e40dd4eb-0a62-42dd-8b99-e9236f8ace90}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Infra\AppsWorld.JournalVoucherModule.Infra.csproj">
+      <Project>{bf6b639f-b816-4e87-99b2-c69870bde917}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Models\AppsWorld.JournalVoucherModule.Models.csproj">
+      <Project>{803b9f85-a532-4b62-89e9-73b6a9c900db}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.RepositoryPattern\AppsWorld.JournalVoucherModule.RepositoryPattern.csproj">
+      <Project>{05e726d7-f683-44c3-975f-6e7cce1efb8b}</Project>
+      <Name>AppsWorld.JournalVoucherModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Service.cs\AppsWorld.JournalVoucherModule.Service.csproj">
+      <Project>{8d026bfb-9ba2-418e-b693-aaaceea2fc46}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.MasterModule.Application\AppsWorld.MasterModule.Application.csproj">
+      <Project>{b0f812db-85cc-4efd-b930-f0b78e8a2ce9}</Project>
+      <Name>AppsWorld.MasterModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.MasterModule.Entities\AppsWorld.MasterModule.Entities.csproj">
+      <Project>{86e03712-8693-4425-9ea1-96592c4229fb}</Project>
+      <Name>AppsWorld.MasterModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.MasterModule.Infra\AppsWorld.MasterModule.Infra.csproj">
+      <Project>{3ec1c542-e04c-4082-a9a7-bc11ad111348}</Project>
+      <Name>AppsWorld.MasterModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.MasterModule.Models\AppsWorld.MasterModule.Models.csproj">
+      <Project>{7986b854-34bf-4e1e-8d74-8bd585248ed6}</Project>
+      <Name>AppsWorld.MasterModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.MasterModule.RepositoryPattern\AppsWorld.MasterModule.RepositoryPattern.csproj">
+      <Project>{85acb25d-de45-4923-8f83-b31897e12b66}</Project>
+      <Name>AppsWorld.MasterModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.MasterModule.Service\AppsWorld.MasterModule.Service.csproj">
+      <Project>{63be6717-ce2c-4973-ae82-be8c4e932927}</Project>
+      <Name>AppsWorld.MasterModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.OpeningBalancesModule.Application\AppsWorld.OpeningBalancesModule.Application.csproj">
+      <Project>{e3085021-3265-48de-bc86-0360309dc534}</Project>
+      <Name>AppsWorld.OpeningBalancesModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.OpeningBalancesModule.Entities\AppsWorld.OpeningBalancesModule.Entities.csproj">
+      <Project>{f9945727-0cb6-4a42-93f6-b8cd4732a941}</Project>
+      <Name>AppsWorld.OpeningBalancesModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.OpeningBalancesModule.Infra\AppsWorld.OpeningBalancesModule.Infra.csproj">
+      <Project>{00d04430-d337-4e45-83c8-68f2566777cc}</Project>
+      <Name>AppsWorld.OpeningBalancesModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.OpeningBalancesModule.Models\AppsWorld.OpeningBalancesModule.Models.csproj">
+      <Project>{82ee05de-9d5f-4d2c-874b-e3ace961d25d}</Project>
+      <Name>AppsWorld.OpeningBalancesModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.OpeningBalancesModule.RepositoryPattern\AppsWorld.OpeningBalancesModule.RepositoryPattern.csproj">
+      <Project>{a8d05157-175e-4267-a86d-2f0445ca937c}</Project>
+      <Name>AppsWorld.OpeningBalancesModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.OpeningBalancesModule.Service\AppsWorld.OpeningBalancesModule.Service.csproj">
+      <Project>{08bd9baf-4f8b-4f25-9179-d607f92d651e}</Project>
+      <Name>AppsWorld.OpeningBalancesModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.PaymentModule.Application\AppsWorld.PaymentModule.Application.csproj">
+      <Project>{5db1193c-303f-4bda-9227-08a659a29aee}</Project>
+      <Name>AppsWorld.PaymentModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.PaymentModule.Entities\AppsWorld.PaymentModule.Entities.csproj">
+      <Project>{a689afbd-e8f7-4992-b1aa-7e25a23df650}</Project>
+      <Name>AppsWorld.PaymentModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.PaymentModule.Infra\AppsWorld.PaymentModule.Infra.csproj">
+      <Project>{52e6e41c-99c0-468c-a3d3-0ed568c33db5}</Project>
+      <Name>AppsWorld.PaymentModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.PaymentModule.Models\AppsWorld.PaymentModule.Models.csproj">
+      <Project>{990bcde9-bbea-4f8f-b9be-5375f59e9ac8}</Project>
+      <Name>AppsWorld.PaymentModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.PaymentModule.RepositoryPattern\AppsWorld.PaymentModule.RepositoryPattern.csproj">
+      <Project>{b85fc240-5ee6-46b7-ab98-9051606ef999}</Project>
+      <Name>AppsWorld.PaymentModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.PaymentModule.Service\AppsWorld.PaymentModule.Service.csproj">
+      <Project>{d06e40ef-7eed-4f65-ab14-a704c320809b}</Project>
+      <Name>AppsWorld.PaymentModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReceiptModule.Application\AppsWorld.ReceiptModule.Application.csproj">
+      <Project>{76d93bce-a9f8-4986-8552-11a522065abf}</Project>
+      <Name>AppsWorld.ReceiptModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReceiptModule.Entities\AppsWorld.ReceiptModule.Entities.csproj">
+      <Project>{6a71cb5f-ca2a-46a4-be54-9c254b7a65e2}</Project>
+      <Name>AppsWorld.ReceiptModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReceiptModule.Infra\AppsWorld.ReceiptModule.Infra.csproj">
+      <Project>{6efda22d-8c50-484e-9391-8e842bc31ef4}</Project>
+      <Name>AppsWorld.ReceiptModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReceiptModule.Models\AppsWorld.ReceiptModule.Models.csproj">
+      <Project>{b162a422-049c-4ca6-a0b2-d3f896e4438e}</Project>
+      <Name>AppsWorld.ReceiptModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReceiptModule.RepositoryPattern\AppsWorld.ReceiptModule.RepositoryPattern.csproj">
+      <Project>{dcef2531-147c-4c33-80a2-ed52968f20ca}</Project>
+      <Name>AppsWorld.ReceiptModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReceiptModule.Repository\AppsWorld.ReceiptModule.Repository.csproj">
+      <Project>{beb70b86-3275-473f-a736-9d96314e6cc1}</Project>
+      <Name>AppsWorld.ReceiptModule.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReceiptModule.Service\AppsWorld.ReceiptModule.Service.csproj">
+      <Project>{b2c41fae-7d6d-475c-8140-e94232a853cc}</Project>
+      <Name>AppsWorld.ReceiptModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReminderModule.Application\AppsWorld.ReminderModule.Application.csproj">
+      <Project>{1C7D561C-1615-4D85-BD7B-9F7D8F09277B}</Project>
+      <Name>AppsWorld.ReminderModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReminderModule.Entities\AppsWorld.ReminderModule.Entities.csproj">
+      <Project>{40E4189F-25C9-4237-A06E-2AE68B8B7E19}</Project>
+      <Name>AppsWorld.ReminderModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReminderModule.Infra\AppsWorld.ReminderModule.Infra.csproj">
+      <Project>{04b2bd05-734b-40fc-926c-d2a10c78fa02}</Project>
+      <Name>AppsWorld.ReminderModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReminderModule.Models\AppsWorld.ReminderModule.Models.csproj">
+      <Project>{a2c03305-4e7c-48ed-b48d-9ab235f52fcd}</Project>
+      <Name>AppsWorld.ReminderModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReminderModule.RepositoryPattern\AppsWorld.ReminderModule.RepositoryPattern.csproj">
+      <Project>{29D5912E-AE70-4F35-B751-40A41EE3A3C1}</Project>
+      <Name>AppsWorld.ReminderModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReminderModule.Repository\AppsWorld.ReminderModule.Repository.csproj">
+      <Project>{1347ce3a-4040-42d0-93d5-bd3c3c51fd12}</Project>
+      <Name>AppsWorld.ReminderModule.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReminderModule.Service\AppsWorld.ReminderModule.Service.csproj">
+      <Project>{4e1d5d42-1b2c-44cb-b08f-297069fed7fa}</Project>
+      <Name>AppsWorld.ReminderModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReportsModule.Application\AppsWorld.ReportsModule.Application.csproj">
+      <Project>{522c0de5-0030-4337-8faf-94db5bba1fce}</Project>
+      <Name>AppsWorld.ReportsModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReportsModule.Models\AppsWorld.ReportsModule.Models.csproj">
+      <Project>{ded3cc4c-cd68-460b-ac39-53b8ea681c7d}</Project>
+      <Name>AppsWorld.ReportsModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.RevaluationModule.Models\AppsWorld.RevaluationModule.Models.csproj">
+      <Project>{de3439d3-3ed0-44aa-a4af-e7f5a1c8a15e}</Project>
+      <Name>AppsWorld.RevaluationModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.RevaluationModule.Service\AppsWorld.RevaluationModule.Service.csproj">
+      <Project>{72e91723-5105-4dcb-9858-ea0fc697e25e}</Project>
+      <Name>AppsWorld.RevaluationModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.RevalutionModule.ApplicationService\AppsWorld.RevaluationModule.Application.csproj">
+      <Project>{73e1f1fc-871d-471b-972a-55f6a20835d0}</Project>
+      <Name>AppsWorld.RevaluationModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.RevalutionModule.Entities\AppsWorld.RevaluationModule.Entities.csproj">
+      <Project>{04367185-8e1a-4997-b123-b688570a9174}</Project>
+      <Name>AppsWorld.RevaluationModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.RevalutionModule.RepositoryPattern\AppsWorld.RevaluationModule.RepositoryPattern.csproj">
+      <Project>{a725dd00-b889-46ad-831b-e6c67179c4bd}</Project>
+      <Name>AppsWorld.RevaluationModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.RevolutionModule.Infra\AppsWorld.RevaluationModule.Infra.csproj">
+      <Project>{99dd00f3-f913-42a5-bb40-3805f6d457c9}</Project>
+      <Name>AppsWorld.RevaluationModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.TemplateModule.Application\AppsWorld.TemplateModule.Application.csproj">
+      <Project>{4276d3b2-ca1c-4130-b118-73b14b1718dc}</Project>
+      <Name>AppsWorld.TemplateModule.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.TemplateModule.Entities\AppsWorld.TemplateModule.Entities.csproj">
+      <Project>{bbde0ff2-e7d8-4651-9c45-af756f44991a}</Project>
+      <Name>AppsWorld.TemplateModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.TemplateModule.Infra\AppsWorld.TemplateModule.Infra.csproj">
+      <Project>{a1ec633c-910a-4e6f-a770-9bbd92cb99c0}</Project>
+      <Name>AppsWorld.TemplateModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.TemplateModule.Models\AppsWorld.TemplateModule.Models.csproj">
+      <Project>{3F9D3BD5-1746-4BCE-9EC3-A952D5DBBDC8}</Project>
+      <Name>AppsWorld.TemplateModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.TemplateModule.RepositoryPattern\AppsWorld.TemplateModule.RepositoryPattern.csproj">
+      <Project>{543bb6bb-6142-4e5f-b761-28cb5a205859}</Project>
+      <Name>AppsWorld.TemplateModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.TemplateModule.Repository\AppsWorld.TemplateModule.Repository.csproj">
+      <Project>{ffa74cb5-8ea0-47c9-b335-542b2651ebc6}</Project>
+      <Name>AppsWorld.TemplateModule.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.TemplateModule.Service\AppsWorld.TemplateModule.Service.csproj">
+      <Project>{1b647dec-21bc-4ca0-8b0d-41c5bbcf5d93}</Project>
+      <Name>AppsWorld.TemplateModule.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="libman.json" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <None Include="Web.Dev.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Prd.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.PRDTemp.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Staging.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Tst.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.UAT.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Web.Dev.config|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Tst|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Int|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DevTst|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prd|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dmo|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PCUAT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PCTST|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMPRD|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMUAT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMPRDNEW|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMWebNew|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMPRDWithKey|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TSTAppService|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UATAppservices|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PRDTemp|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57584</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57584/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.0\build\Microsoft.ApplicationInsights.WindowsServer.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Web.2.9.0\build\Microsoft.ApplicationInsights.Web.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Web.2.9.0\build\Microsoft.ApplicationInsights.Web.targets'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.9.0\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.9.0\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.9.0\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.0\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.9.0\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.9.0\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.9.0\build\Microsoft.ApplicationInsights.Web.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

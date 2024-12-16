@@ -1,0 +1,134 @@
+﻿using System;
+using System.Collections.Generic;
+using Repository.Pattern.Ef6;
+using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
+using FrameWork;
+using AppsWorld.Framework;
+using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
+namespace AppsWorld.BillModule.Entities
+{
+    public partial class Journal : Entity
+    {
+        public Journal()
+        {
+            this.JournalDetails = new List<JournalDetail>();
+        }
+        public System.Guid Id { get; set; }
+        public long CompanyId { get; set; }
+        public System.DateTime DocDate { get; set; }
+        public string DocType { get; set; }
+        public string DocSubType { get; set; }
+        public string DocNo { get; set; }
+        public long? ServiceCompanyId { get; set; }
+        public string SystemReferenceNo { get; set; }
+        public Nullable<bool> IsNoSupportingDocs { get; set; }
+        public Nullable<bool> NoSupportingDocument { get; set; }
+        public string DocCurrency { get; set; }
+        //public string SegmentCategory1 { get; set; }
+        //public string SegmentCategory2 { get; set; }
+        public bool IsSegmentReporting { get; set; }
+        //public Nullable<long> SegmentMasterid1 { get; set; }
+        //public Nullable<long> SegmentMasterid2 { get; set; }
+        //public Nullable<long> SegmentDetailid1 { get; set; }
+        //public Nullable<long> SegmentDetailid2 { get; set; }
+        public Nullable<decimal> ExchangeRate { get; set; }
+        public string ExCurrency { get; set; }
+        //public Nullable<System.DateTime> ExDurationFrom { get; set; }
+        //public Nullable<System.DateTime> ExDurationTo { get; set; }
+        public Nullable<decimal> GSTExchangeRate { get; set; }
+        public string GSTExCurrency { get; set; }
+        //public Nullable<System.DateTime> GSTExDurationFrom { get; set; }
+        //public Nullable<System.DateTime> GSTExDurationTo { get; set; }
+        public decimal GSTTotalAmount { get; set; }
+        public Nullable<bool> ISAllowDisAllow { get; set; }
+        public string DocumentState { get; set; }
+        public bool IsNoSupportingDocument { get; set; }
+        public bool IsGstSettings { get; set; }
+        public bool IsMultiCurrency { get; set; }
+        public bool IsAllowableNonAllowable { get; set; }
+        public Nullable<bool> IsBaseCurrencyRateChanged { get; set; }
+        public Nullable<bool> IsGSTCurrencyRateChanged { get; set; }
+        public string Remarks { get; set; }
+        public string UserCreated { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public string ModifiedBy { get; set; }
+        public Nullable<System.DateTime> ModifiedDate { get; set; }
+        [Timestamp]
+        public byte[] Version { get; set; }
+        RecordStatusEnum _status;
+
+        [Required]
+        [JsonConverter(typeof(StringEnumConverter))]
+        [StatusValue]
+        public RecordStatusEnum Status
+        {
+            get
+            {
+                return _status;
+            }
+            set { _status = (RecordStatusEnum)value; }
+        }
+        public string DocumentDescription { get; set; }
+        //public Nullable<bool> IsRecurringJournal { get; set; }
+        //public string RecurringJournalName { get; set; }
+        //public Nullable<int> FrequencyValue { get; set; }
+        //public string FrequencyType { get; set; }
+        //public Nullable<System.DateTime> FrequencyEndDate { get; set; }
+        //public Nullable<bool> IsAutoReversalJournal { get; set; }
+        //public Nullable<System.DateTime> ReversalDate { get; set; }
+        //public Nullable<Guid> ReverseParentRefId { get; set; }
+        //public Nullable<Guid> ReverseChildRefId { get; set; }
+        public string CreationType { get; set; }
+        public string Nature { get; set; }
+        public Nullable<decimal> GrandDocDebitTotal { get; set; }
+        public Nullable<decimal> GrandDocCreditTotal { get; set; }
+        public Nullable<decimal> GrandBaseDebitTotal { get; set; }
+        public Nullable<decimal> GrandBaseCreditTotal { get; set; }
+        //public bool? IsCopy { get; set; }
+        public Nullable<System.DateTime> DueDate { get; set; }
+        public Guid? EntityId { get; set; }
+        public string EntityType { get; set; }
+        //public string PoNo { get; set; }
+        public Nullable<System.DateTime> PostingDate { get; set; }
+        public bool? IsGSTApplied { get; set; }
+        //public bool? IsGSTDeRegistration { get; set; }
+        //public DateTime? GSTDeRegistrationDate { get; set; }
+        public long? COAId { get; set; }
+        public string ModeOfReceipt { get; set; }
+        //public string BankReceiptAmmountCurrency { get; set; }
+        //public decimal? BankReceiptAmmount { get; set; }
+        //public string BankChargesCurrency { get; set; }
+        //public decimal? BankCharges { get; set; }
+        //public string ExcessPaidByClient { get; set; }
+        //public string ExcessPaidByClientCurrency { get; set; }
+        //public decimal? ExcessPaidByClientAmmount { get; set; }
+        //public string BalancingItemReciveCRCurrency { get; set; }
+        //public decimal? BalancingItemReciveCRAmount { get; set; }
+        //public string BalancingItemPayDRCurrency { get; set; }
+        //public decimal? BalancingItemPayDRAmount { get; set; }
+        //public string ReceiptApplicationCurrency { get; set; }
+        //public decimal? ReceiptApplicationAmmount { get; set; }
+        public Guid? DocumentId { get; set; }
+        //public Guid? ReverseParentId { get; set; }
+        //public bool? IsRepeatingInvoice { get; set; }
+        //public int? RepEveryPeriodNo { get; set; }
+        //public string RepEveryPeriod { get; set; }
+        //public DateTime? EndDate { get; set; }
+        public long? CreditTermsId { get; set; }
+        //public Nullable<DateTime> BankClearingDate { get; set; }
+        public decimal? BalanceAmount { get; set; }
+        //public bool? IsBalancing { get; set; }
+        //public virtual Company Company { get; set; }
+        //public DateTime? NextDue { get; set; }
+        //public DateTime? LastPosted { get; set; }
+        //[NotMapped]
+        //public string ReceiptrefNo { get; set; }
+        public virtual ICollection<JournalDetail> JournalDetails { get; set; }
+
+
+    }
+}

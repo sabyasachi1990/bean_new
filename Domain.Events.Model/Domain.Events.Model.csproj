@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6BB2751-130C-4873-A0D1-C0A389A65674}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain.Events.Model</RootNamespace>
+    <AssemblyName>Domain.Events.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EventStore.ClientAPI">
+      <HintPath>..\packages\EventStore.Client.3.0.1\lib\net40\EventStore.ClientAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.Core">
+      <HintPath>..\packages\Glimpse.1.8.1\lib\net45\Glimpse.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glimpse.EventStore">
+      <HintPath>..\packages\Glimpse.EventStore.2.1.0\lib\net40\Glimpse.EventStore.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\packages\LinqKit.1.1.3.1\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.PdfGenerator">
+      <HintPath>..\packages\NReco.PdfGenerator.1.1.12.0\lib\net20\NReco.PdfGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ziraff.AppsWorldEventStore">
+      <HintPath>..\packages\Ziraff.EventStore.1.1.0\lib\Ziraff.AppsWorldEventStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Ziraff.Domain.Events">
+      <HintPath>..\packages\Ziraff.Domain.Events.1.1.0\lib\Ziraff.Domain.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="Ziraff.FrameWork">
+      <HintPath>..\packages\Ziraff.Framework.1.1.0\lib\Ziraff.FrameWork.dll</HintPath>
+    </Reference>
+    <Reference Include="Ziraff.Repository.Pattern">
+      <HintPath>..\packages\Ziraff.RepositoryPattern.Ef6.1.1.0\lib\Ziraff.Repository.Pattern.dll</HintPath>
+    </Reference>
+    <Reference Include="Ziraff.Repository.Pattern.Ef6">
+      <HintPath>..\packages\Ziraff.RepositoryPattern.Ef6.1.1.0\lib\Ziraff.Repository.Pattern.Ef6.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EventHandlers\BankReconciliationCreatedHandler.cs" />
+    <Compile Include="EventHandlers\BankReconciliationUpdatedHandler.cs" />
+    <Compile Include="EventHandlers\BillCreatedHandler.cs" />
+    <Compile Include="EventHandlers\BillUpdatedHandler.cs" />
+    <Compile Include="EventHandlers\JournalCreatedHandler.cs" />
+    <Compile Include="EventHandlers\JournalUpdatedHandler.cs" />
+    <Compile Include="EventHandlers\ReceiptCreate1Handler.cs" />
+    <Compile Include="EventHandlers\ReceiptUpdatedHandler.cs" />
+    <Compile Include="Events\BankReconciliationCreated.cs" />
+    <Compile Include="Events\BankReconciliationUpdated.cs" />
+    <Compile Include="Events\BillCreated.cs" />
+    <Compile Include="Events\BillUpdated.cs" />
+    <Compile Include="Events\JournalCreated.cs" />
+    <Compile Include="Events\JournalUpdated.cs" />
+    <Compile Include="Events\ReceiptCreated1.cs" />
+    <Compile Include="Events\ReceiptUpdated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppsWorld.BankReconciliationModule.Models\AppsWorld.BankReconciliationModule.Models.csproj">
+      <Project>{f0bee03a-c168-4159-b733-f1c30ca201c4}</Project>
+      <Name>AppsWorld.BankReconciliationModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.BillModule.Models\AppsWorld.BillModule.Models.csproj">
+      <Project>{1e2c9dbe-639c-4b13-b86b-773d702542a6}</Project>
+      <Name>AppsWorld.BillModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Infra\AppsWorld.CommonModule.Infra.csproj">
+      <Project>{de74fa8d-df9f-4619-b12f-af364e5aae86}</Project>
+      <Name>AppsWorld.CommonModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Models\AppsWorld.JournalVoucherModule.Models.csproj">
+      <Project>{803b9f85-a532-4b62-89e9-73b6a9c900db}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.ReceiptModule.Models\AppsWorld.ReceiptModule.Models.csproj">
+      <Project>{b162a422-049c-4ca6-a0b2-d3f896e4438e}</Project>
+      <Name>AppsWorld.ReceiptModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModuleUrl\ModuleUrl.csproj">
+      <Project>{78cbef60-d1b2-49fe-8e30-41f0e532c2eb}</Project>
+      <Name>ModuleUrl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

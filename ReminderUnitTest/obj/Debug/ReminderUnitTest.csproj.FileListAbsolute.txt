@@ -1,0 +1,9 @@
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\bin\Debug\ReminderUnitTest.dll
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\bin\Debug\ReminderUnitTest.pdb
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\bin\Debug\Newtonsoft.Json.dll
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\bin\Debug\Newtonsoft.Json.xml
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\obj\Debug\ReminderUnitTest.csproj.CoreCompileInputs.cache
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\obj\Debug\ReminderUnitTest.csproj.CopyComplete
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\obj\Debug\ReminderUnitTest.dll
+D:\GITHUB_NEW\Bean.API\API\ReminderUnitTest\obj\Debug\ReminderUnitTest.pdb

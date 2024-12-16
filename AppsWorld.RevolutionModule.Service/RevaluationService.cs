@@ -1,0 +1,12 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AppsWorld.RevalutionModule.Service
+{
+    //public class RevaluationService : Service<Revalution>, IRevaluationService
+    //{
+    //}
+}

@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8D026BFB-9BA2-418E-B693-AAACEEA2FC46}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppsWorld.JournalVoucherModule.Service.cs</RootNamespace>
+    <AssemblyName>AppsWorld.JournalVoucherModule.Service.cs</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev|AnyCPU'">
+    <OutputPath>bin\Dev\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Tst|AnyCPU'">
+    <OutputPath>bin\Tst\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Int|AnyCPU'">
+    <OutputPath>bin\Int\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DevTst|AnyCPU'">
+    <OutputPath>bin\DevTst\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prd|AnyCPU'">
+    <OutputPath>bin\Prd\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dmo|AnyCPU'">
+    <OutputPath>bin\Dmo\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UAT|AnyCPU'">
+    <OutputPath>bin\UAT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PCUAT|AnyCPU'">
+    <OutputPath>bin\PCUAT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PCTST|AnyCPU'">
+    <OutputPath>bin\PCTST\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMPRD|AnyCPU'">
+    <OutputPath>bin\SCMPRD\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMUAT|AnyCPU'">
+    <OutputPath>bin\SCMUAT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMPRDNEW|AnyCPU'">
+    <OutputPath>bin\SCMPRDNEW\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMWebNew|AnyCPU'">
+    <OutputPath>bin\SCMWebNew\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SCMPRDWithKey|AnyCPU'">
+    <OutputPath>bin\SCMPRDWithKey\</OutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TSTAppService|AnyCPU'">
+    <OutputPath>bin\TSTAppService\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'UATAppservices|AnyCPU'">
+    <OutputPath>bin\UATAppservices\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PRDTemp|AnyCPU'">
+    <OutputPath>bin\PRDTemp\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.3.1, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.3.1\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.4.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.3.0.0\lib\net452\Microsoft.Azure.KeyVault.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.WebKey, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.KeyVault.WebKey.3.0.0\lib\net452\Microsoft.Azure.KeyVault.WebKey.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Services.AppAuthentication.1.3.1\lib\net461\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=4.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.4.3.0\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.11\lib\net452\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime.Azure, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.Azure.3.3.12\lib\net452\Microsoft.Rest.ClientRuntime.Azure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.6.0\lib\net46\Serilog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Formatting.Compact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Formatting.Compact.1.0.0\lib\net45\Serilog.Formatting.Compact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.ApplicationInsights, Version=2.5.2.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.ApplicationInsights.2.5.2\lib\net45\Serilog.Sinks.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.PeriodicBatching, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.PeriodicBatching.2.1.1\lib\net45\Serilog.Sinks.PeriodicBatching.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Seq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Seq.4.0.0\lib\net45\Serilog.Sinks.Seq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.5.0.2\lib\net45\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.5.0.2\lib\net45\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Redis.5.0.2\lib\net45\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.5.0.2\lib\net45\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ziraff.FrameWork, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Framework.1.1.2\lib\net461\Ziraff.FrameWork.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Repository.Pattern, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.RepositoryPattern.Ef6.1.1.1\lib\Ziraff.Repository.Pattern.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Repository.Pattern.Ef6, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.RepositoryPattern.Ef6.1.1.1\lib\Ziraff.Repository.Pattern.Ef6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.Sections, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZiraffSection.1.0.0.4\lib\Ziraff.Sections.dll</HintPath>
+    </Reference>
+    <Reference Include="Ziraff.Service.Pattern, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.Service.Pattern.1.1.1\lib\Ziraff.Service.Pattern.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ziraff.WebApi.RedisCache.Core, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.WebApi.RedisCache.V2.1.2.3.2\lib\net461\Ziraff.WebApi.RedisCache.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ziraff.WebApi.RedisCache.V2, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ziraff.WebApi.RedisCache.V2.1.2.3.2\lib\net461\Ziraff.WebApi.RedisCache.V2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountTypeService.cs" />
+    <Compile Include="ActivityHistoryService.cs" />
+    <Compile Include="AutoNumberCompanyService.cs" />
+    <Compile Include="AutoNumberService.cs" />
+    <Compile Include="BeanEntityService.cs" />
+    <Compile Include="BillDetailService.cs" />
+    <Compile Include="BillGstDetailService.cs" />
+    <Compile Include="BillService.cs" />
+    <Compile Include="CashSaleService.cs" />
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="ChartOfAccountService.cs" />
+    <Compile Include="ClearingService.cs" />
+    <Compile Include="CommonForexService.cs" />
+    <Compile Include="CompanyFeatureService.cs" />
+    <Compile Include="CompanyService.cs" />
+    <Compile Include="CompanySettingService.cs" />
+    <Compile Include="ControlCodeCategoryService.cs" />
+    <Compile Include="ControlCodeService.cs" />
+    <Compile Include="CreditNoteApplicationDetailService.cs" />
+    <Compile Include="CreditNoteApplicationService.cs" />
+    <Compile Include="CurrencyService.cs" />
+    <Compile Include="DoubtfulDebtAllocationDetailService.cs" />
+    <Compile Include="DoubtfulDebtAllocationService.cs" />
+    <Compile Include="FeatureService.cs" />
+    <Compile Include="FinancialSettingService.cs" />
+    <Compile Include="ForexService.cs" />
+    <Compile Include="GstSettingService.cs" />
+    <Compile Include="HangfireService.cs" />
+    <Compile Include="IAccountTypeService.cs" />
+    <Compile Include="IActivityHistoryService.cs" />
+    <Compile Include="IAutoNumberCompanyService.cs" />
+    <Compile Include="IAutoNumberService.cs" />
+    <Compile Include="IBeanEntityService.cs" />
+    <Compile Include="IBillDetailService.cs" />
+    <Compile Include="IBillGstDetailService.cs" />
+    <Compile Include="IBillService.cs" />
+    <Compile Include="ICashSaleService.cs" />
+    <Compile Include="ICategoryService.cs" />
+    <Compile Include="IChartOfAccountService.cs" />
+    <Compile Include="IClearingService.cs" />
+    <Compile Include="ICommonForexService.cs" />
+    <Compile Include="ICompanyFeatureService.cs" />
+    <Compile Include="ICompanyService.cs" />
+    <Compile Include="ICompanySettingService.cs" />
+    <Compile Include="IControlCodeCategoryService.cs" />
+    <Compile Include="IControlCodeService.cs" />
+    <Compile Include="ICreditNoteApplicationDetailService.cs" />
+    <Compile Include="ICreditNoteApplicationService.cs" />
+    <Compile Include="ICurrencyService.cs" />
+    <Compile Include="IDoubtfulDebtAllocationService.cs" />
+    <Compile Include="IDoubtfulDebtAllocationDetailService.cs" />
+    <Compile Include="IFeatureService.cs" />
+    <Compile Include="IFinancialSettingService.cs" />
+    <Compile Include="IForexService.cs" />
+    <Compile Include="IGSTSettingService.cs" />
+    <Compile Include="IHangfireService.cs" />
+    <Compile Include="IDebitNoteService.cs" />
+    <Compile Include="IInvoiceService.cs" />
+    <Compile Include="IInvoiceDetailService.cs" />
+    <Compile Include="IJournalDetailService.cs" />
+    <Compile Include="IJournalGSTDetailService.cs" />
+    <Compile Include="IJournalService.cs" />
+    <Compile Include="IJvActivitylogService.cs" />
+    <Compile Include="IMultiCurrencySettingService.cs" />
+    <Compile Include="InvoiceDetailService.cs" />
+    <Compile Include="DebitNoteService.cs" />
+    <Compile Include="InvoiceService.cs" />
+    <Compile Include="IOrderService.cs" />
+    <Compile Include="IPaymentDetailService.cs" />
+    <Compile Include="IReceiptDetailService.cs" />
+    <Compile Include="IPaymentService.cs" />
+    <Compile Include="ICreditMemoService.cs" />
+    <Compile Include="IReceiptService.cs" />
+    <Compile Include="ISegmentDetailService.cs" />
+    <Compile Include="ISegmentMasterService.cs" />
+    <Compile Include="ISubCategoryService.cs" />
+    <Compile Include="ITaxCodeService.cs" />
+    <Compile Include="ITermsOfPaymentService.cs" />
+    <Compile Include="IWithdrawalService.cs" />
+    <Compile Include="JournalDetailService.cs" />
+    <Compile Include="JournalGSTDetailService.cs" />
+    <Compile Include="JournalService.cs" />
+    <Compile Include="JvActivitylogService.cs" />
+    <Compile Include="MultiCurrencySettingService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="PaymentService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CreditMemoService.cs" />
+    <Compile Include="PaymentDetailService.cs" />
+    <Compile Include="ReceiptDetailService.cs" />
+    <Compile Include="ReciptService.cs" />
+    <Compile Include="SegmentDetailService.cs" />
+    <Compile Include="SegmentMasterService.cs" />
+    <Compile Include="SubCategoryService.cs" />
+    <Compile Include="TaxCodeService.cs" />
+    <Compile Include="TermsOfPaymentService.cs" />
+    <Compile Include="V3\Journal\IJournalServiceV3.cs" />
+    <Compile Include="V3\Journal\JournalServiceV3.cs" />
+    <Compile Include="WithdrawalService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Entities\AppsWorld.CommonModule.Entities.csproj">
+      <Project>{f387a5ee-2a80-448f-b5a6-81f16b68375a}</Project>
+      <Name>AppsWorld.CommonModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Infra\AppsWorld.CommonModule.Infra.csproj">
+      <Project>{de74fa8d-df9f-4619-b12f-af364e5aae86}</Project>
+      <Name>AppsWorld.CommonModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.CommonModule.Service\AppsWorld.CommonModule.Service.csproj">
+      <Project>{030714CB-455E-4218-B41E-7E9C838D9520}</Project>
+      <Name>AppsWorld.CommonModule.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Entities\AppsWorld.JournalVoucherModule.Entities.csproj">
+      <Project>{e40dd4eb-0a62-42dd-8b99-e9236f8ace90}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Infra\AppsWorld.JournalVoucherModule.Infra.csproj">
+      <Project>{bf6b639f-b816-4e87-99b2-c69870bde917}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Models\AppsWorld.JournalVoucherModule.Models.csproj">
+      <Project>{803b9f85-a532-4b62-89e9-73b6a9c900db}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.RepositoryPattern\AppsWorld.JournalVoucherModule.RepositoryPattern.csproj">
+      <Project>{05e726d7-f683-44c3-975f-6e7cce1efb8b}</Project>
+      <Name>AppsWorld.JournalVoucherModule.RepositoryPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AppsWorld.JournalVoucherModule.Repository\AppsWorld.JournalVoucherModule.Repository.csproj">
+      <Project>{a0796990-68d5-41e3-9c51-6b58fb6d5798}</Project>
+      <Name>AppsWorld.JournalVoucherModule.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ModuleUrl.Model
+{
+	public partial class ModuleDetail
+	{
+		public ModuleDetail()
+		{
+			
+		}
+
+		public long Id { get; set; }
+		public long ModuleMasterId { get; set; }
+		public string GroupName { get; set; }
+		public string Heading { get; set; }
+		public string Description { get; set; }
+		public Nullable<System.Guid> LogoId { get; set; }
+		public string CssSprite { get; set; }
+		public string FontAwesome { get; set; }
+		public string Url { get; set; }
+		public Nullable<int> RecOrder { get; set; }
+		public string Remarks { get; set; }
+		public Nullable<int> Status { get; set; }
+		public string PageUrl { get; set; }
+		public string GroupUrl { get; set; }
+		public long CompanyId { get; set; }
+		public string MasterUrl { get; set; }
+		
+	}
+}

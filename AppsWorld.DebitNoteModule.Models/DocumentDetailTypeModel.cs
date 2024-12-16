@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AppsWorld.DebitNoteModule.Models
+{
+    public class DocumentDetailTypeModel
+    {
+        public Guid? Id { get; set; }
+        public Guid? ItemId { get; set; }
+        public string ItemCode { get; set; }
+        public string ItemDescription { get; set; }
+        public double? Qty { get; set; }
+        public string Unit { get; set; }
+        public decimal? UnitPrice { get; set; }
+        public string DiscountType { get; set; }
+        public Nullable<double> Discount { get; set; }
+        public long? COAId { get; set; }
+        //public Nullable<bool> AllowDisAllow { get; set; }
+        public Nullable<long> TaxId { get; set; }
+        public Nullable<double> TaxRate { get; set; }
+        public Nullable<decimal> DocTaxAmount { get; set; }
+        //public string TaxCurrency { get; set; }
+        public decimal? DocAmount { get; set; }
+        public decimal DocTotalAmount { get; set; }
+        public decimal? BaseTaxAmount { get; set; }
+        public decimal? BaseAmount { get; set; }
+        public decimal? BaseTotalAmount { get; set; }
+        public string AmtCurrency { get; set; }
+        public int? RecOrder { get; set; }
+        //public bool? IsPLAccount { get; set; }
+        public string TaxIdCode { get; set; }
+        public string RecordStatus { get; set; }
+    }
+}
